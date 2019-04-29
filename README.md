@@ -1,4 +1,4 @@
-# Babel Plugin Styles Literal
+# Babel Plugin Style Literal
 
 This is _an experimental_ plugin that compiles tagged string literals to inline
 style objects that can be used in JSX components. No runtime needed.
@@ -68,4 +68,5 @@ let text = <p style={style}>Hello, World!</p>;
 
 MIT License.
 
-The implementation is partially based on @blia's [css-tag](https://github.com/blia/css-tag).
+The implementation is partially based on [**@blia**](https://github.com/blia)'s
+[css-tag](https://github.com/blia/css-tag).

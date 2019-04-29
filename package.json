@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-styles-literal",
+  "name": "babel-plugin-style-literal",
   "version": "0.0.1",
   "description": "A Babel plugin that compiles tagged css string to JSX inline styles",
   "main": "index.js",

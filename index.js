@@ -4,9 +4,9 @@ let camelCase = require('camelcase');
 const TARGET_TAG_NAME = 'css';
 const EXPRESSION_PLACEHOLDER = '__EXPRESSION_PLACEHOLDER__';
 
-module.exports = function StylesLiteralPlugin({ types }) {
+module.exports = function StyleLiteralPlugin({ types }) {
   return {
-    name: 'styles-literal',
+    name: 'style-literal',
     visitor: {
       TaggedTemplateExpression(path) {
         if (path.node.tag.name !== TARGET_TAG_NAME) return;
