@@ -25,14 +25,14 @@ experience in writing CSS code no matter where you need it.
 1. Install the plugin
 
 ```
-npm install --save-dev babel-plugin-styles-literal
+npm install --save-dev babel-plugin-style-literal
 ```
 
 2. Add the plugin to your Babel config
 
 ```json
 {
-  "plugins": ["babel-plugin-styles-literal"]
+  "plugins": ["babel-plugin-style-literal"]
 }
 ```
 
