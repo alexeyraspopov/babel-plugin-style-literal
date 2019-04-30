@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-style-literal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Babel plugin that compiles tagged css string to JSX inline styles",
   "main": "index.js",
   "license": "MIT",
