@@ -45,10 +45,11 @@ remove it in the build time.
 In:
 
 ```jsx
+let textColor = getRandomColor();
 let style = css`
   font-size: 12px;
   line-height: 1.5;
-  color: purple;
+  color: ${textColor};
 `;
 let text = <p style={style}>Hello, World!</p>;
 ```
@@ -56,10 +57,11 @@ let text = <p style={style}>Hello, World!</p>;
 Out:
 
 ```jsx
+let textColor = getRandomColor();
 let style = {
   fontSize: '12px',
   lineHeight: '1.5',
-  color: 'purple',
+  color: textColor,
 };
 let text = <p style={style}>Hello, World!</p>;
 ```
