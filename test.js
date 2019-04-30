@@ -8,6 +8,8 @@ test('simple transform', () => {
     '  line-height: 1.5;',
     '  box-shadow: 1px 1px 0 red, inset 2px 3px 0 green;',
     '  background-image: linear-gradient(to bottom, blue, red);',
+    '  -webkit-transition: box-shadow 0.15s;',
+    '  -ms-transition: box-shadow 0.15s;',
     '`;',
   ].join('\n');
 
@@ -16,7 +18,9 @@ test('simple transform', () => {
     '  fontSize: "12px",',
     '  lineHeight: "1.5",',
     '  boxShadow: "1px 1px 0 red, inset 2px 3px 0 green",',
-    '  backgroundImage: "linear-gradient(to bottom, blue, red)"',
+    '  backgroundImage: "linear-gradient(to bottom, blue, red)",',
+    '  WebkitTransition: "box-shadow 0.15s",',
+    '  msTransition: "box-shadow 0.15s"',
     '};',
   ].join('\n');
 

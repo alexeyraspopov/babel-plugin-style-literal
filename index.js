@@ -1,5 +1,4 @@
 let postcss = require('postcss');
-let camelCase = require('camelcase');
 
 const TARGET_TAG_NAME = 'css';
 const EXPRESSION_PLACEHOLDER = '__EXPRESSION_PLACEHOLDER__';
@@ -26,7 +25,7 @@ module.exports = function StyleLiteralPlugin({ types }) {
           );
 
           return types.objectProperty(
-            types.identifier(camelCase(prop)),
+            types.identifier(dehyphenateProperty(prop)),
             joinedParts.reduce((acc, part) =>
               types.binaryExpression('+', acc, part)
             )
@@ -38,6 +37,12 @@ module.exports = function StyleLiteralPlugin({ types }) {
     },
   };
 };
+
+function dehyphenateProperty(name) {
+  return name
+    .replace('-ms-', 'ms-')
+    .replace(/-([a-z])/g, (string, match) => match.toUpperCase());
+}
 
 function join(a, b) {
   return a.length > 0
