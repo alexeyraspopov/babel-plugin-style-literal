@@ -12,7 +12,13 @@ module.exports = function StyleLiteralPlugin({ types }) {
 
         let { quasis, expressions } = path.node.quasi;
         let css = quasis.map(v => v.value.raw).join(EXPRESSION_PLACEHOLDER);
-        let parsedCss = postcss.parse(css);
+        let parsedCss;
+        try {
+          parsedCss = postcss.parse(css);
+        } catch (error) {
+          let msg = `${error.message}\n${error.showSourceCode()}`;
+          throw new Error(msg);
+        }
         let declarations = parsedCss.nodes.filter(node => node.type === 'decl');
 
         let entries = declarations.map(({ prop, value }) => {

@@ -68,3 +68,19 @@ test('transform with expressions', () => {
 
   expect(result.code).toEqual(expected);
 });
+
+test('error reporting', () => {
+  let code = [
+    'let style = css`',
+    '  font-size: 15px',
+    '  line-height: 1.5;',
+    '`;',
+  ].join('\n');
+
+  expect(() => {
+    let result = transform(code, {
+      babelrc: false,
+      plugins: [plugin],
+    });
+  }).toThrow(/Missed semicolon/);
+});
